@@ -690,3 +690,83 @@ section .container {
     transform: rotate(360deg);
   }
 }
+
+/* Dropdown Styles */
+.dropdown ul {
+  display: none;
+  position: absolute;
+  background: #fff;
+  padding: 10px 0;
+  list-style: none;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 99;
+  border: 1px solid #ddd;
+
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+
+.dropdown ul li {
+  white-space: nowrap;
+}
+
+.dropdown ul li a {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+}
+
+.dropdown > a {
+  cursor: pointer;
+}
+/* Atur warna dasar teks dropdown */
+.dropdown ul li a {
+  color: #333; /* warna teks normal */
+  background-color: #fff; /* background putih */
+  padding: 10px 20px;
+  display: block;
+}
+
+/* Saat hover: ubah warna background dan teks */
+.dropdown ul li a:hover {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.dropdown a.active {
+  color: #000 !important; /* Warna kuning atau sesuaikan dengan tema */
+}
+
+#header {
+  overflow: visible; /* agar dropdown tidak terpotong */
+  z-index: 1000;
+}
+
+#navbar {
+  overflow: visible; /* penting jika dropdown ada di dalamnya */
+  position: relative;
+  z-index: 1001;
+}
+
+.navbar .dropdown-menu {
+  position: absolute; /* pastikan dropdown tidak mengikuti alur konten */
+  z-index: 1002;
+  top: 100%; /* letakkan tepat di bawah tombol dropdown */
+  left: 0;
+  display: none; /* sembunyikan dulu */
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+  display: block; /* munculkan saat hover */
+}
+
+#header.header-top #gambar-utama {
+  display: none;
+}
+
+
+
+
+
