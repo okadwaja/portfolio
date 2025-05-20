@@ -766,7 +766,14 @@ section .container {
   display: none;
 }
 
+.carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* hitam semi-transparan */
+    border-radius: 20%; /* lingkaran */
+    padding: 10px;
+  }
 
-
-
-
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 7%; /* sempit agar tidak makan ruang banyak */
+  }
