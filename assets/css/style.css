@@ -67,6 +67,14 @@ h6 {
   transform: scale(1.1);
 }
 
+/* hilangkan gamar di layar kecil */
+@media (max-width: 768px) {
+  #gambar-utama {
+    display: none;
+  }
+}
+
+
 #header {
   transition: ease-in-out 0.3s;
   position: relative;
@@ -287,6 +295,68 @@ h6 {
 .navbar li:hover>a {
   color: #fff;
 }
+
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar li {
+    margin: 5px 10px;
+  }
+
+  .navbar {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #header h1 {
+    font-size: 24px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  #header h2 {
+    font-size: 16px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  #header .social-links {
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* NAVBAR tetap transparan saat di home (tanpa header-top) */
+#header:not(.header-top) .navbar ul {
+  background: transparent;
+}
+
+/* NAVBAR jadi gelap saat scroll (saat class .header-top aktif) */
+#header.header-top .navbar ul {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 10px 15px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+
+
+
 
 
 /*--------------------------------------------------------------
@@ -664,8 +734,7 @@ section .container {
 
 .table-project td img{
     max-width: 200px;
-    max-height: 150px;
-    object-fit: cover;
+    max-height: auto;
 }
 
 .table-project td img{
@@ -675,6 +744,43 @@ section .container {
 .table-project td img:hover{
   transform: scale(1.1);
 }
+
+/* Default (desktop) tetap pakai tabel */
+.table-project {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Responsive layout untuk layar kecil */
+@media (max-width: 768px) {
+  .table-project, .table-project tbody, .table-project tr, .table-project td {
+    display: block;
+    width: 100%;
+  }
+
+  .table-project tr {
+    margin-bottom: 15px;
+  }
+
+  .table-project td {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .table-project td img {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* tetap batasi untuk desktop */
+    transition: all 0.2s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    .table-project td img {
+      max-width: 100%; /* lepas batasan di mobile */
+    }
+  }
+}
+
 
 .footer{
   text-align: center;
